@@ -12,6 +12,8 @@ Simple PySerial example.
 * `python main.py --port [PORTNAME] --baud [BAUDRATE]`
 * Type away!
 
+**Note**: the default port is `/dev/ttyUSB0` and the default baud rate is `115200`
+
 The way I tested this was to setup a simple hardware loopback on `/dev/ttyUSB0` that just echo'd what I typed in the program.  
 
 
