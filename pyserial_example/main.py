@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
     __author__="Gilbert Montague"
-    Super simple example of using the PySerial module to blink and LED on an Arduino Uno
+    Super simple example of using the PySerial module to send characters over the serial line
 """
 import serial
 import argparse
