@@ -77,5 +77,20 @@ if __name__ == '__main__':
 
     #Write stuff
     while True:
-        write_string = raw_input("Type stuff. Press enter to send. ")
-        print(write_string)
+        write_string = raw_input("Type stuff. Press enter to send. Type 'close' to close the port. ")
+
+        if write_string == 'close':
+            ds.print_status(ds.INFO, "Closing connection. Goodbye")
+            ser.flush()
+            ser.close()
+            break
+        else:
+            #Send the string
+            try:
+                ser.write(str(write_string))
+                ser.write('\r')
+                ser.flush()
+            except:
+                ds.print_status(ds.WARNING, "Unable to send string")
+        
+        
