@@ -1,7 +1,9 @@
 """Helper python script to generate debug messages"""
 import datetime
 
-#Colors for debug output
+# Colors for debug output
+
+
 class ConsoleColors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -17,6 +19,7 @@ INFO = ConsoleColors.OKGREEN + "[INFO]"
 FATAL_ERROR = ConsoleColors.FAIL + "[FATAL_ERROR]"
 WARNING = ConsoleColors.WARNING + "[WARNING]"
 
+
 def get_current_time():
     """
         Returns the current system time
@@ -25,9 +28,11 @@ def get_current_time():
     """
     return str(datetime.datetime.now().strftime("%H:%M:%S"))
 
+
 def print_status(type, message):
     """
         Prints a log message to the console
     """
-    debug_status = type + " " + get_current_time() + " " + message + ConsoleColors.ENDC
+    debug_status = type + " " + get_current_time() + " " + message + \
+        ConsoleColors.ENDC
     print(debug_status)
