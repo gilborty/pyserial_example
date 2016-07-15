@@ -83,12 +83,12 @@ if __name__ == '__main__':
             ds.print_status(ds.INFO, "Closing connection. Goodbye")
             ser.flush()
             ser.close()
-            break
+            exit()
         else:
             #Send the string
             try:
                 ser.write(str(write_string))
-                ser.write('\r')
+                ser.write('\r\n')
                 ser.flush()
             except:
                 ds.print_status(ds.WARNING, "Unable to send string")
