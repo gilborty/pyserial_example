@@ -8,6 +8,7 @@ import serial
 import argparse
 import glob
 import sys
+import time
 
 # My own library for pretty print debug statements
 import debug_status as ds
@@ -96,5 +97,14 @@ if __name__ == '__main__':
                 ser.write(str(write_string))
                 ser.write('\r\n')
                 ser.flush()
+                ds.print_status(ds.INFO, "Sent: %s" % str(write_string))
             except:
                 ds.print_status(ds.WARNING, "Unable to send string")
+            
+            #Read what we just wrote
+            try:
+                time.sleep(0.1)
+                line = ser.readline()
+                ds.print_status(ds.INFO, "Recieved: %s" % str(line))
+            except Exception, e:
+                ds.print_status(ds.WARNING, str(e))
