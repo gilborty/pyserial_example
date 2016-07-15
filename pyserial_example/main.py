@@ -68,4 +68,14 @@ if __name__ == '__main__':
 
     #Try and open the port
     ds.print_status(ds.INFO, "Opening port: %s with baud rate: %s" % (port, baud_rate))
-    
+    try:
+        ser = serial.Serial(port, baud_rate)
+    except(OSError, serial.SerialException):
+        ds.print_status(ds.FATAL_ERROR, "UNABLE TO OPEN PORT: %s WITH BAUD RATE: %s" % (port, baud_rate))
+        exit()
+    ds.print_status(ds.INFO, "Successfully opened serial port")
+
+    #Write stuff
+    while True:
+        write_string = raw_input("Type stuff. Press enter to send. ")
+        print(write_string)
