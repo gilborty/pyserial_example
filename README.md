@@ -12,7 +12,7 @@ Simple PySerial example.
 * `python main.py --port [PORTNAME] --baud [BAUDRATE]`
 * Type away!
 
-The way I tested this was to setup a simple loop back on `/dev/ttyUSB0` that just echo'd what I typed in the program.  
+The way I tested this was to setup a simple hardware loopback on `/dev/ttyUSB0` that just echo'd what I typed in the program.  
 
 
 
