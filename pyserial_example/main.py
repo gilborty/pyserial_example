@@ -100,8 +100,8 @@ if __name__ == '__main__':
                 ds.print_status(ds.INFO, "Sent: %s" % str(write_string))
             except:
                 ds.print_status(ds.WARNING, "Unable to send string")
-            
-            #Read what we just wrote
+
+            # Read what we just wrote
             try:
                 time.sleep(0.1)
                 line = ser.readline()
